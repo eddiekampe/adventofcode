@@ -13,10 +13,7 @@ for opinion in opinions:
     person_a, operation, happiness, person_b = re.findall(r"[A-Z][a-z]+|gain|lose|\d+", opinion)
     persons.update([person_a, person_b])
 
-    if operation == "gain":
-        affections[(person_a, person_b)] = int(happiness)
-    elif operation == "lose":
-        affections[(person_a, person_b)] = int("-{}".format(happiness))
+    affections[(person_a, person_b)] = int(happiness) if operation == "gain" else -int(happiness)
 
 # Go through all possible placements
 for seating in list(itertools.permutations(persons)):
