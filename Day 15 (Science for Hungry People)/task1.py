@@ -35,7 +35,7 @@ def optimize_recipe(stats, max_spoons):
 
     mixture = dict()
     current_teaspoons = 4
-    # Lets start with one och each ingredient
+    # Lets start with one of each ingredient
     for ingredient in stats.keys():
         mixture[ingredient] = 1
 
