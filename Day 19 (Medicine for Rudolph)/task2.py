@@ -13,9 +13,10 @@ for replacement in replacements:
 
 def explore(current_molecule, depth=0):
 
-    depth += 1
     if current_molecule == "e":
         yield depth
+
+    depth += 1
 
     for t in translations.iterkeys():
         for match in re.finditer(t, current_molecule):
